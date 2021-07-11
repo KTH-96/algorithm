@@ -1,8 +1,26 @@
 package day0711;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
 public class S1330 {
-    public static void main(String[] args) {
-        System.out.println("if문 두수비교하기!!");
-        System.out.println("다시한번 테스트");
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine()," ");
+
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+
+        if(a > b){
+            System.out.println(">");
+        } else if (a < b) {
+            System.out.println("<");
+        } else {
+            System.out.println("==");
+        }
+        //삼항연산자 사용시
+        // String t = (a < b) ? "<" : ((a > b) ? ">" : "==")
     }
 }
