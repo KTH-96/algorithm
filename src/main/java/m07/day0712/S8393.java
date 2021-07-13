@@ -1,20 +1,18 @@
-package day0712;
+package m07.day0712;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class S2741 {
+public class S8393 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        br.close();
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        int c = 0;
+        int result =0;
         for (int i = 0; i < n; i++) {
-            bw.write(++c + "\n");
+            result += i;
         }
-        bw.flush();
-        bw.close();
-
+        System.out.println(result);
     }
 }

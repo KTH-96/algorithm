@@ -1,11 +1,9 @@
-package day0712;
+package m07.day0712;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
-public class S11022 {
+public class S11021 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -14,9 +12,7 @@ public class S11022 {
 
         for (int i = 1; i <= n; i++) {
             st = new StringTokenizer(br.readLine(), " ");
-            int a = Integer.parseInt(st.nextToken());
-            int b = Integer.parseInt(st.nextToken());
-            System.out.println("Case #"+i+": "+a+" + "+b+" = "+(a+b));
+            System.out.println("Case #"+i+": "+(Integer.parseInt(st.nextToken())+Integer.parseInt(st.nextToken())));
         }
         br.close();
 

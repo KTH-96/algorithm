@@ -1,4 +1,4 @@
-package day0711;
+package m07.day0711;
 
 import java.io.BufferedReader;
 import java.io.IOException;
