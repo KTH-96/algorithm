@@ -11,21 +11,20 @@ public class S1978 {
         br.readLine();
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-        int c =0;
-        while (st.hasMoreTokens()) {
-            int num = Integer.parseInt(st.nextToken());
-            boolean a = true;
+        int c = 0;
 
-            if (num == 1) {
-                continue;
-            }
-            for (int i = 2; i <= Math.sqrt(num); i++) {
-                if (num % i == 0){
-                    a =false;
+        while (st.hasMoreTokens()) {
+            boolean isPrime = true;
+            int n = Integer.parseInt(st.nextToken());
+
+            if (n == 1) continue;
+            for (int i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) {
+                    isPrime = false;
                     break;
                 }
             }
-            if (a == false) {
+            if (isPrime) {
                 c++;
             }
         }

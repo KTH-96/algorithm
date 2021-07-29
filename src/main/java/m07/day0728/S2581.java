@@ -1,50 +1,37 @@
+package m07.day0728;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
-public class Main {
-
-    public static boolean arr[];
-
-    public static void main(String[] args) throws IOException {
-
+public class S2581{
+    public static void main (String[]args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int a = Integer.parseInt(br.readLine());
+        int b = Integer.parseInt(br.readLine());
 
-        int m = Integer.parseInt(br.readLine());
-        int n = Integer.parseInt(br.readLine());
-
-        arr = new boolean[n + 1];	// 배열 생성
-        arr[0] = true;
-        arr[1] = true;
-
-        for(int i = 2; i <= Math.sqrt(arr.length); i++) {
-            if(arr[i]) continue;
-            for(int j = i * i; j < arr.length; j += i) {
-                arr[j] = true;
+        boolean[] prime = new boolean[b+1];
+        prime[0] = true;
+        prime[1] = true;
+        for (int i = 2; i <= Math.sqrt(prime.length); i++) {
+            if (prime[i]) continue;
+            for (int j = i*i; j < prime.length ; j += i) {
+                prime[j] = true;
             }
         }
-
-
-
         int sum = 0;
-        int min = Integer.MAX_VALUE;
-        for(int i = M; i <= n; i++) {
-            if(arr[i] == false) {
+        int min = 0;
+        for (int i = a; i <= b; i++) {
+            if (prime[i] == false) {
                 sum += i;
-                if(min == Integer.MAX_VALUE) {
-                    min = i;
-                }
+                if (min == 0) min = i;
             }
         }
-
-        if(sum == 0) {
+        if (sum == 0) {
             System.out.println(-1);
-        }
-        else {
+        } else {
             System.out.println(sum);
             System.out.println(min);
         }
-
     }
-
 }
