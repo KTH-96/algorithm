@@ -49,7 +49,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager" selected="Application.S1193">
     <configuration name="S1085" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -112,6 +112,8 @@
       <workItem from="1627624888165" duration="5241000" />
       <workItem from="1627712150374" duration="5219000" />
       <workItem from="1627793005847" duration="3660000" />
+      <workItem from="1627818547194" duration="93000" />
+      <workItem from="1627878219618" duration="2106000" />
     </task>
     <servers />
   </component>
