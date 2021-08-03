@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="796d4d5d-e900-46f8-be9f-2de567759f0e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/m08/w01/day0802/S4948.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/m08/w01/day0803/S10870.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/m08/w01/day0803/S10872.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/m08/w01/day0803/S10870.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/m08/w01/day0803/S10872.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/m08/w01/day0801/S1193.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/m08/w01/day0801/S1193.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,15 +55,28 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
-  <component name="RunManager" selected="Application.S1193">
+  <component name="RunManager" selected="Application.S10870">
     <configuration name="S1085" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="m07.day0730.S1085" />
       <module name="algorithm.main" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="m07.day0730.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="S10870" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="m08.w01.day0803.S10870" />
+      <module name="algorithm.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="m08.w01.day0803.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,6 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.S10870" />
         <item itemvalue="Application.S1193" />
         <item itemvalue="Application.S1085" />
         <item itemvalue="Application.S11653" />
@@ -113,7 +133,10 @@
       <workItem from="1627712150374" duration="5219000" />
       <workItem from="1627793005847" duration="3660000" />
       <workItem from="1627818547194" duration="93000" />
-      <workItem from="1627878219618" duration="2106000" />
+      <workItem from="1627878219618" duration="2420000" />
+      <workItem from="1627880684449" duration="190000" />
+      <workItem from="1627880901584" duration="93000" />
+      <workItem from="1627962660114" duration="2865000" />
     </task>
     <servers />
   </component>
