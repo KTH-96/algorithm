@@ -1,4 +1,4 @@
-package m08.w04;
+package m08.w04.day23;
 
 import java.util.Arrays;
 import java.util.Scanner;
