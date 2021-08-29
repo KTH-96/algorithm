@@ -29,7 +29,6 @@ public class S2108 {
             counting[arr[i]]++;
         }
 
-
         sb.append(arr[N-1] - arr[0]).append('\n');//범위
     }
 }
