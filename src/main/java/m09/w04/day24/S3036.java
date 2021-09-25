@@ -16,13 +16,13 @@ public class S3036 {
         for (int i = 1; i < t; i++) {
             int otherRing = Integer.parseInt(st.nextToken());
             int gcd = GCD(fr, otherRing);
-            sb.append(fr / gcd).append('/').append(fr / gcd).append('\n');
+            sb.append(fr / gcd).append('/').append(otherRing / gcd).append('\n');
         }
         System.out.println(sb);
     }
 
     static int GCD(int i, int i1) {
-        int r = 0;
+        int r;
         while (i1 != 0) {
             r = i % i1;
             i = i1;
