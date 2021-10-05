@@ -16,6 +16,7 @@ public class S1018 {
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
 
+        arr = new boolean[N][M];
         for (int i = 0; i < N; i++) {
             String line = br.readLine();
 
@@ -45,9 +46,9 @@ public class S1018 {
 
         boolean TF = arr[i][j];//첫번째 0,0 의 색 f = B : t = W
 
-        for (int k = 0; k < x; k++) {
-            for (int l = 0; l < y; l++) {
-                if (arr[k][y] != TF) {
+        for (int k = i; k < x; k++) {
+            for (int l = j; l < y; l++) {
+                if (arr[k][l] != TF) {
                     count++;
                 }
                 TF = !TF;//다음칸은 무조건 앞칸이랑 색이 달라야 함
