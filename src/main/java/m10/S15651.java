@@ -22,7 +22,7 @@ public class S15651 {
         N = Integer.parseInt(st.nextToken());//세로 갯수
         M = Integer.parseInt(st.nextToken());//가로 갯수
 
-        arr = new int[M];
+        arr =  new int[M];
         dfs(0);
         System.out.println(sb);
     }
