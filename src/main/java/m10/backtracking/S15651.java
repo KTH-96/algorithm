@@ -30,7 +30,6 @@ public class S15651 {
         }
         for (int i = 1; i <= N; i++) {
             arr[dept] = i;
-            System.out.println(dept);
             dfs(dept + 1);
         }
     }
