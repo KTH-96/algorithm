@@ -9,43 +9,6 @@ public class num42889 {
     //실패율 같으면 stages.size()가 짧은거부터
     public int[] solution(int N, int[] stages) {
         //실패율 = 스테이지 도달 but 클리어 못한 인수 / 스테이지 도달 인수
-        int[] falP = new int[N];
-        double[] falL = new double[N];
-        int length = stages.length;
 
-        int all = 0;
-        for (int i = 0; i < N ; i++) {
-            //i가 스테이지
-            for (int j = 0; j < stages.length; j++) {
-                if (stages[j] == (i + 1)) {
-                    falP[i]++;
-                }
-                if (stages[j] == N){
-                    all++;
-                }
-            }
-            if (all == (N + 1)){
-                int[] allfal = new int[N];
-                allfal[0] = N;
-                for (int j = 1; j < N; j++) {
-                    allfal[j] = j;
-                }
-                return allfal;
-            }
-            falL[i] = falP[i] / length;
-            length = length - falP[i];
-        }
-        int rank = 1;
-        int[] ranks = new int[N];
-        for (int i = 0; i < N - 1; i++) {
-            for (int j = i+1; j < N; j++) {
-                if (falL[i] < falL[j]){
-                    falL[j] = falL[i];
-                    rank++;
-                }
-            }
-            ranks[i] = rank;
-        }
-        return ranks;
     }
 }
