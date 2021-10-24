@@ -1,9 +1,6 @@
-package m10.backtracking;
+package baekjoon.backtracking;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 
 public class S15651 {
     static int N,M;
