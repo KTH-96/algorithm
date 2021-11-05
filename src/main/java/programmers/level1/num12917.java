@@ -25,5 +25,12 @@ public class num12917 {
         char[] answer = s.toCharArray();
         Arrays.sort(answer);
         return new StringBuilder(new String(answer)).reverse().toString();
+
+//        return s.chars()
+//                .sorted()
+//                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+//                .reverse()
+//                .toString();
+
     }
 }
