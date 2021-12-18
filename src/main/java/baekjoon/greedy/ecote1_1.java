@@ -1,6 +1,6 @@
 package baekjoon.greedy;
 
-public class ecote3_6 {
+public class ecote1_1 {
     public static void main(String[] args) {
         int i = endOne(25, 5);
         System.out.println(i);

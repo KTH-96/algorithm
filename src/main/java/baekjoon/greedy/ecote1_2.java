@@ -1,6 +1,6 @@
 package baekjoon.greedy;
 
-public class ecoteMultiplyOrAdd {
+public class ecote1_2 {
     public static void main(String[] args) {
         int solution = solution("02984");
         System.out.println(solution);
