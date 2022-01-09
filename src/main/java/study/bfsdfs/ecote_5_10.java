@@ -1,4 +1,4 @@
-package study.dfs;
+package study.bfsdfs;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

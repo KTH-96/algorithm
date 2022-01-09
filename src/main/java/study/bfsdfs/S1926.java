@@ -1,4 +1,4 @@
-package study.bfs;
+package study.bfsdfs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
