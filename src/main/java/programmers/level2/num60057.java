@@ -2,37 +2,31 @@ package programmers.level2;
 
 public class num60057 {
     public int solution(String s) {
-        int answer = s.length();
-
-        for (int i = 1; i < s.length() / 2 + 1; i++) {
-            String prev = s.substring(0, i);
-            int count = 1;
-            String enc = "";
-            String last = "";
-            for (int j = i; j < s.length(); j += i) {
-                if (j + i > s.length()) {
-                    last = s.substring(j);
-                    continue;
-                }
-                if (prev.equals(s.substring(j, j + i))) {
+        int min = 1001;
+        if (s.length() == 1 ) return 1;
+        for (int i = 1; i <= s.length() / 2; i++) {
+            int count = 0;
+            String temp = s.substring(0, i);
+            String number = "";
+            for (int j = i; j < s.length(); j+=i) {
+                if (temp.equals(s.substring(j, j + i))) {
                     count++;
                 } else {
-                    enc += prev;
-                    if (count != 1) {
-                        enc = count + enc;
-                    }
-                    prev = s.substring(j, j + i);
-                    count = 1;
+                        if (count > 1) {
+                            number += String.valueOf(count);
+                        }
+                        number += temp;
+                        count = 1;
                 }
             }
-            enc += prev + last;
-            if (count != 1) {
-                enc = count + enc;
+            if (count > 1) {
+                number += String.valueOf(count);
             }
-
-            answer = Math.min(answer, enc.length());
+            number += temp;
+            int rest = s.length() % i;
+            min = Math.min(min, number.length() + rest);
         }
 
-        return answer;
+        return min;
     }
 }
