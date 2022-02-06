@@ -1,7 +1,7 @@
 package programmers.level2;
 
 public class num60058 {
-    static int c = 0;
+    int c = 0;
     public String solution(String p) {
         if (p.equals("")) {
             return p;
@@ -32,19 +32,20 @@ public class num60058 {
         if (p.charAt(0) == ')'){
             return false;
         }
-        int count = 0;
+        int open = 0;
+        int close = 0;
         for (int i = 0; i < p.length(); i++) {
             if (p.charAt(i) == '(') {
-                count++;
+                open++;
             }else {
-                count--;
+                close++;
             }
-            if (count < 0) {
+            if (open - close< 0) {
                 return false;
             }
-            if (count == 0) {
+            if (open == close) {
                 c = i + 1;
-                break;
+                return true;
             }
         }
         return true;
