@@ -1,53 +1,71 @@
 package programmers.level2;
 
 public class num60058 {
-    int c = 0;
     public String solution(String p) {
-        if (p.equals("")) {
-            return p;
-        }
-        boolean tf = check(p);
-        String u = p.substring(0, c);
-        String v = p.substring(c);
+        return makeString(p);
+    }
 
-        if (tf) {
-            return u + solution(v);
+    private String makeString(String w) {
+        if (w.length() == 0) {
+            return "";
         }
+        int c = findIndex(w);
+        String u = w.substring(0, c);
+        String v = w.substring(c);
+
+        if (isCorrect(u)) {
+            return u + makeString(v);
+        } else {
+            String temp = "(" + makeString(v) + ")";
+            u = u.substring(1, u.length() - 1);
+            u = reverse(u);
+            return temp + u;
+        }
+    }
+
+    private String reverse(String u) {
         StringBuilder sb = new StringBuilder();
-        sb.append("(");
-        sb.append(solution(v));
-        sb.append(")");
 
-        for (int i = 1; i < u.length() - 1; i++) {
+        for (int i = 0; i < u.length(); i++) {
             if (u.charAt(i) == '(') {
                 sb.append(")");
-            }else {
+            } else {
                 sb.append("(");
             }
         }
         return sb.toString();
     }
 
-    private boolean check(String p) {
-        if (p.charAt(0) == ')'){
-            return false;
+    private boolean isCorrect(String w) {
+        int c = 0;
+
+        for (int i = 0; i < w.length(); i++) {
+            if (w.charAt(i) == '(') {
+                c++;
+            } else {
+                c--;
+            }
+            if (c < 0) {
+                return false;
+            }
         }
+        return true;
+    }
+
+    private int findIndex(String w) {
         int open = 0;
         int close = 0;
-        for (int i = 0; i < p.length(); i++) {
-            if (p.charAt(i) == '(') {
+
+        for (int i = 0; i < w.length(); i++) {
+            if (w.charAt(i) == '(') {
                 open++;
             }else {
                 close++;
             }
-            if (open - close< 0) {
-                return false;
-            }
             if (open == close) {
-                c = i + 1;
-                return true;
+                return i + 1;
             }
         }
-        return true;
+        return 0;
     }
 }
