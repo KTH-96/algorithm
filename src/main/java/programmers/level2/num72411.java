@@ -1,11 +1,27 @@
 package programmers.level2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class num72411 {
+    private static List<String> combination;
     public String[] solution(String[] orders, int[] course) {
-        //i++, i = 2일때부터 a~z까지 배열 만들어서 카운트
-        //초기화 후 다시 반복
-        //orders = size[19], size[i].length = 1~10  course = size[10], course[i] = 2~10
-        String[] answer = {};
-        return answer;
+        String[] answer;
+        combination = new ArrayList<>();
+        for (int i = 0; i < orders.length; i++) {
+            char[] orders_char = orders[i].toCharArray();
+            Arrays.sort(orders_char);
+
+            for (int j = 0; j < orders_char.length; j++) {
+                for (int k = 0; k < course.length; k++) {
+                    dfs(orders_char, j, 1, course[k], String.valueOf(orders_char[j]));
+                }
+            }
+        }
+    }
+
+    private void dfs(char[] arr, int idx, int length, int course, String str) {
+        햣
     }
 }
