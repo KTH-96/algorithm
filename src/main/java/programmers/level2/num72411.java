@@ -7,7 +7,7 @@ import java.util.List;
 public class num72411 {
     private static List<String> combination;
     public String[] solution(String[] orders, int[] course) {
-        String[] answer;
+        String[] answer = new String[0];
         combination = new ArrayList<>();
         for (int i = 0; i < orders.length; i++) {
             char[] orders_char = orders[i].toCharArray();
@@ -19,9 +19,10 @@ public class num72411 {
                 }
             }
         }
+        return answer;
     }
 
     private void dfs(char[] arr, int idx, int length, int course, String str) {
-        햣
+
     }
 }
