@@ -32,4 +32,6 @@ public class num3273 {
         }
         System.out.println(count);
     }
+
+
 }
