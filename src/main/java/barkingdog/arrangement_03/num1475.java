@@ -1,4 +1,4 @@
-package barkingdog.arrangement03;
+package barkingdog.arrangement_03;
 
 import java.io.BufferedReader;
 import java.io.IOException;
