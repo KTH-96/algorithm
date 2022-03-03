@@ -3,16 +3,16 @@ package barkingdog.deque_07;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class Num5430 {
+    private static StringBuilder sb = new StringBuilder();
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int num = Integer.parseInt(br.readLine());
-        Deque<Integer> deque = new LinkedList<>();
-        StringBuilder sb = new StringBuilder();
+        Deque<Integer> deque = new ArrayDeque<>();
         StringTokenizer st;
         for (int i = 0; i < num; i++) {
             String command = br.readLine();
@@ -21,42 +21,44 @@ public class Num5430 {
             for (int j = 0; j < size; j++) {
                 deque.add(Integer.parseInt(st.nextToken()));
             }
-
-            boolean ft = true;
-            boolean error = false;
-            for (char ch : command.toCharArray()) {
-                if (ch == 'R') {
-                    ft = !ft;
-                    continue;
-                }
-                if (deque.isEmpty()) {
-                    error = !error;
-                    break;
-                }
-                if (ft) {
-                    deque.removeFirst();
-                }else {
-                    deque.removeLast();
-                }
-            }
-            if (!error) {
-                if (ft) {
-                    sb.append("[").append(deque.pollFirst());
-                    while (!deque.isEmpty()) {
-                        sb.append(",").append(deque.pollFirst());
-                    }
-                    sb.append("]").append('\n');
-                }else {
-                    sb.append("[").append(deque.pollLast());
-                    while (!deque.isEmpty()) {
-                        sb.append(",").append(deque.pollLast());
-                    }
-                    sb.append("]").append('\n');
-                }
-            }else {
-                sb.append("error").append('\n');
-            }
+            start(command, deque);
         }
         System.out.println(sb);
+    }
+
+    private static void start(String command, Deque<Integer> deque) {
+        boolean isFrontOrBack = true;
+        for (char ch : command.toCharArray()) {
+            if (ch == 'R') {
+                isFrontOrBack = !isFrontOrBack;
+                continue;
+            }
+
+            if (deque.isEmpty()) {
+                sb.append("error").append('\n');
+                return;
+            }
+            if (isFrontOrBack) {
+                deque.removeFirst();
+            } else {
+                deque.removeLast();
+            }
+        }
+
+        sb.append("[");
+        if (!deque.isEmpty()) {
+            if (isFrontOrBack) {
+                sb.append(deque.pollFirst());
+                while (!deque.isEmpty()) {
+                    sb.append(",").append(deque.pollFirst());
+                }
+            } else {
+                sb.append(deque.pollLast());
+                while (!deque.isEmpty()) {
+                    sb.append(",").append(deque.pollLast());
+                }
+            }
+        }
+        sb.append("]").append("\n");
     }
 }
