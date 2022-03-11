@@ -17,32 +17,31 @@ public class Num2504 {
     private static int result(char[] chars, Stack<Character> s) {
         int sum = 0;
         int num = 1;
-
-        for (char ch : chars) {
-            if (ch == '(') {
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == '(') {
                 num *= 2;
-                s.push(ch);
-            } else if (ch == '[') {
+                s.push(chars[i]);
+            } else if (chars[i] == '[') {
                 num *= 3;
-                s.push(ch);
-            } else if (ch == ')') {
+                s.push(chars[i]);
+            } else if (chars[i] == ')') {
                 if (s.isEmpty() || s.peek() != '(') {
                     return 0;
                 }
-                if (s.peek() == '(') {
+                if (chars[i - 1] == '(') {
                     sum += num;
-                    s.pop();
-                    num /= 2;
                 }
+                s.pop();
+                num /= 2;
             } else {
                 if (s.isEmpty() || s.peek() != '[') {
                     return 0;
                 }
-                if (s.peek() == '[') {
+                if (chars[i - 1] == '[') {
                     sum += num;
-                    s.pop();
-                    num /= 3;
                 }
+                s.pop();
+                num /= 3;
             }
         }
         if (s.isEmpty()) {
