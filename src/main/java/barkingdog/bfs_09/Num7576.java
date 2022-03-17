@@ -53,7 +53,7 @@ public class Num7576 {
             for (int j = 0; j < n; j++) {
                 if (dist[i][j] == -1) {
                     System.out.println(-1);
-                    System.exit(0);
+                    return;
                 }
                 max = Math.max(max, dist[i][j]);
             }
