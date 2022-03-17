@@ -22,9 +22,9 @@ public class Num7576 {
 
         Queue<int[]> q = new LinkedList<>();
         for (int i = 0; i < m; i++) {
-            st = new StringTokenizer(br.readLine(), " ");
+            String[] split = br.readLine().split(" ");
             for (int j = 0; j < n; j++) {
-                board[i][j] = Integer.parseInt(st.nextToken());
+                board[i][j] = Integer.parseInt(split[j]);
                 if (board[i][j] == 0) {
                     dist[i][j] = -1;
                 }
@@ -35,17 +35,19 @@ public class Num7576 {
         }
         while (!q.isEmpty()) {
             int[] now = q.poll();
+            int cx = now[0];
+            int cy = now[1];
             for (int i = 0; i < 4; i++) {
-                int nextX = now[0] + dx[i];
-                int nextY = now[1] + dy[i];
-                if (nextX < 0 || nextY < 0 || nextX >= m || nextY >= n) {
+                int nx = cx + dx[i];
+                int ny = cy + dy[i];
+                if (nx < 0 || ny < 0 || nx >= m || ny >= n) {
                     continue;
                 }
-                if (dist[nextX][nextY] == -1) {
+                if (dist[nx][ny] >= 0) {
                     continue;
                 }
-                dist[nextX][nextY] = dist[now[0]][now[1]] + 1;
-                q.offer(new int[]{nextX, nextY});
+                dist[nx][ny] = dist[cx][cy] + 1;
+                q.offer(new int[]{nx, ny});
             }
         }
         int max = 0;
