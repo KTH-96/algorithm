@@ -11,7 +11,7 @@ public class Num1012 {
     static int[] dy = {-1, 0, 1, 0};
     static int[][] map;
     static boolean[][] vist;
-    static Queue<int[]> q = new LinkedList<>();
+
     static int m, n;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -42,16 +42,15 @@ public class Num1012 {
     }
 
     private static void bfs(int x, int y) {
+        Queue<int[]> q = new LinkedList<>();
         vist[x][y] = true;
         q.offer(new int[]{x, y});
         while (!q.isEmpty()) {
             int[] cur = q.poll();
-            int cx = cur[0];
-            int cy = cur[1];
             for (int j = 0; j < 4; j++) {
-                int nx = cx + dx[j];
-                int ny = cy + dy[j];
-                if (nx < 0 || nx >= n || ny < 0 || ny >= m){
+                int nx = cur[0] + dx[j];
+                int ny = cur[1] + dy[j];
+                if (nx < 0 || nx >= m || ny < 0 || ny >= n){
                     continue;
                 }
                 if (map[nx][ny] != 1 || vist[nx][ny]){
