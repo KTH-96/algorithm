@@ -34,17 +34,19 @@ public class Num5427 {
                 for (int j = 0; j < m; j++) {
                     map[i][j] = chars[j];
                     if (map[i][j] != '#') {
+                        distF[i][j] = 0;
+                        distP[i][j] = 0;
                         if (map[i][j] == '*') {
                             qF.offer(new int[]{i, j});
                             distF[i][j] = 1;
                         }
                         if (map[i][j] == '@') {
                             qP.offer(new int[]{i, j});
-                            distF[i][j] = 1;
+                            distP[i][j] = 1;
                         }
                     } else {
                         distF[i][j] = -1;
-                        distF[i][j] = -1;
+                        distP[i][j] = -1;
                     }
                 }
             }
@@ -58,10 +60,11 @@ public class Num5427 {
                     if (nx < 0 || ny < 0 || nx >= n || ny >= m) {
                         continue;
                     }
-                    if(map[nx][ny] == '.' || map[nx][ny] == '@') {
-                        distF[nx][ny] = distF[x][y] + 1;
-                        qF.offer(new int[]{nx, ny});
+                    if (distF[nx][ny] == -1) {
+                        continue;
                     }
+                    distF[nx][ny] = distF[x][y] + 1;
+                    qF.offer(new int[]{nx, ny});
                 }
             }
             while (!qP.isEmpty() && !impossible) {
@@ -76,10 +79,11 @@ public class Num5427 {
                         impossible = true;
                         break;
                     }
-                    if (map[nx][ny] == '.' && distF[nx][ny] < distP[x][y] + 1) {
-                        qP.offer(new int[]{nx, ny});
-                        distP[nx][ny] = distP[x][y] + 1;
+                    if (distP[nx][ny] == -1 || distF[nx][ny] <= distP[x][y] + 1) {
+                        continue;
                     }
+                    qP.offer(new int[]{nx, ny});
+                    distP[nx][ny] = distP[x][y] + 1;
                 }
             }
             if (!impossible){
